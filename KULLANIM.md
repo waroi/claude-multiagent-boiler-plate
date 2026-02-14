@@ -392,6 +392,32 @@ Bu yapi maliyeti dusurur cunku pahali Claude tokenlarini sadece karmasik isler i
 
 ## 11. Hizli Baslangic (5 Dakikada Hazir)
 
+### Yontem A: npm ile Kurulum (Onerilen)
+
+```bash
+# 1. Gemini kur ve giris yap
+npm install -g @google/gemini-cli
+gemini  # yonergeleri takip et
+
+# 2. Codex kur ve giris yap
+npm install -g @openai/codex
+codex login
+
+# 3. Projene git ve generator'i calistir
+cd /path/to/your/project
+npx claude-agents-delegation init
+
+# 4. Projeyi Claude Code ile ac ve dene
+claude  # Claude Code'u ac
+
+# 5. Ilk komutunu yaz
+# "bu projeyi analiz et c3"
+```
+
+`init` komutu sana hangi araclari kullanmak istedigini, dokumantasyon seviyesini ve dili sorar. Soru sormadan varsayilanlarla kurmak icin `--yes` flag'ini kullan.
+
+### Yontem B: Manuel Kopyalama
+
 ```bash
 # 1. Gemini kur ve giris yap
 npm install -g @google/gemini-cli
@@ -414,3 +440,30 @@ claude  # Claude Code'u ac
 ```
 
 Hepsi bu. Artik coklu agent yapisin hazir.
+
+---
+
+## 12. Sorun Giderme
+
+### Codex agent'lari Windows'ta basarisiz oluyor
+
+Codex CLI'nin `read-only` sandbox'i Windows'ta dosya okuma komutlarini (PowerShell `Get-Content`, `findstr` vb.) engelleyebilir. Basit prompt'lar calisir ama dosya analizi basarisiz olabilir.
+
+**Cozum yollari:**
+- PowerShell/cmd yerine **Git Bash** veya **WSL** kullan
+- Dosya icerigini dogrudan pipe'la: `cat dosya.js | codex exec -s read-only "Bunu analiz et"`
+- Tum Codex agent'lari basarisiz olursa Claude otomatik devralir (graceful degradation)
+
+### Gemini bos cikti donduruyor
+
+```bash
+# Gemini kurulu mu kontrol et
+which gemini
+
+# Auth calisiyor mu kontrol et
+echo "test" | gemini -p "Reply with OK" -o text 2>&1
+```
+
+### "Agent basarisiz oldu" mesaji
+
+Bu normaldir. Modellerin kredi limiti veya rate limit'i dolmus olabilir. Sistem otomatik olarak bir sonraki modele gecer. Tum modeller basarisiz olursa Claude devralir.

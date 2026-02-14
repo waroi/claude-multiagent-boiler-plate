@@ -392,6 +392,32 @@ This system reduces costs because it only uses expensive Claude tokens for compl
 
 ## 11. Quick Start (Ready in 5 Minutes)
 
+### Option A: Install via npm (Recommended)
+
+```bash
+# 1. Install Gemini and sign in
+npm install -g @google/gemini-cli
+gemini  # follow the instructions
+
+# 2. Install Codex and sign in
+npm install -g @openai/codex
+codex login
+
+# 3. Go to your project and run the generator
+cd /path/to/your/project
+npx claude-agents-delegation init
+
+# 4. Open your project with Claude Code and try it
+claude  # open Claude Code
+
+# 5. Type your first command
+# "analyze this project c3"
+```
+
+The `init` command will ask you which tools to use, documentation level, and language. Use `--yes` flag to skip prompts and use defaults.
+
+### Option B: Manual copy
+
 ```bash
 # 1. Install Gemini and sign in
 npm install -g @google/gemini-cli
@@ -414,3 +440,30 @@ claude  # open Claude Code
 ```
 
 That's it. Your multi-agent system is ready.
+
+---
+
+## 12. Troubleshooting
+
+### Codex agents fail on Windows
+
+Codex CLI's `read-only` sandbox may block file read commands (PowerShell `Get-Content`, `findstr`, etc.) on Windows. Basic prompts work but file analysis may fail.
+
+**Workarounds:**
+- Use **Git Bash** or **WSL** instead of PowerShell/cmd
+- Pipe file contents directly: `cat file.js | codex exec -s read-only "Analyze this"`
+- If all Codex agents fail, Claude automatically takes over (graceful degradation)
+
+### Gemini returns empty output
+
+```bash
+# Check if gemini is installed
+which gemini
+
+# Check if auth is working
+echo "test" | gemini -p "Reply with OK" -o text 2>&1
+```
+
+### "Agent failed" message
+
+This is normal. Models may have hit their credit or rate limits. The system automatically switches to the next model. If all models fail, Claude takes over.
