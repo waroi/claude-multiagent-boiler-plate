@@ -1,0 +1,21 @@
+# Source reference files (not needed in npm package)
+CLAUDE.md
+KULLANIM.md
+USAGE.md
+codex-integration.md
+codex-integration-en.md
+Gemini-Integration.md
+Gemini-Integration-en.md
+
+# Claude Code config
+.claude/
+
+# IDE
+.vscode/
+
+# Git
+.gitignore
+
+# OS
+.DS_Store
+Thumbs.db

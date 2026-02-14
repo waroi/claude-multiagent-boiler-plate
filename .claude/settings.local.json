@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where:*)",
+      "Bash(codex:*)",
+      "Bash(gemini:*)",
+      "Bash(python:*)",
+      "Bash(dir:*)",
+      "Bash(find:*)",
+      "Bash(npm pack:*)",
+      "Bash(npm whoami:*)",
+      "Bash(npm login:*)",
+      "Bash(npm config set:*)",
+      "Bash(npm publish:*)",
+      "Bash(npm pkg:*)",
+      "Bash(npm version:*)",
+      "Bash(npm view:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

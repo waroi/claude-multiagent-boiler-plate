@@ -1,0 +1,39 @@
+{
+  "name": "claude-agents-delegation",
+  "version": "1.0.1",
+  "description": "Multi-agent delegation boilerplate for Claude Code — Gemini + Codex + Claude working together",
+  "main": "src/generator.js",
+  "bin": {
+    "claude-agents-delegation": "bin/init.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "gemini",
+    "codex",
+    "multi-agent",
+    "delegation",
+    "ai-agents",
+    "cli",
+    "boilerplate"
+  ],
+  "author": "waroi",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waroi/claude-multiagent-boiler-plate.git"
+  },
+  "homepage": "https://github.com/waroi/claude-multiagent-boiler-plate#readme",
+  "bugs": {
+    "url": "https://github.com/waroi/claude-multiagent-boiler-plate/issues"
+  }
+}
