@@ -14,7 +14,26 @@ const geminiEn = require('./docs/gemini-en');
 const geminiTr = require('./docs/gemini-tr');
 
 function generateFiles(answers) {
+  if (!answers || typeof answers !== 'object') {
+    throw new Error('generateFiles requires a valid answers object');
+  }
+
+  const validTools = ['gemini', 'codex', 'both'];
+  const validDocs = ['minimal', 'full'];
+  const validLang = ['en', 'tr', 'both'];
+
   const { tools, docs, lang } = answers;
+
+  if (!validTools.includes(tools)) {
+    throw new Error(`Invalid tools value: "${tools}". Expected: ${validTools.join(', ')}`);
+  }
+  if (!validDocs.includes(docs)) {
+    throw new Error(`Invalid docs value: "${docs}". Expected: ${validDocs.join(', ')}`);
+  }
+  if (docs === 'full' && !validLang.includes(lang)) {
+    throw new Error(`Invalid lang value: "${lang}". Expected: ${validLang.join(', ')}`);
+  }
+
   const files = [];
 
   // Always: CLAUDE.md

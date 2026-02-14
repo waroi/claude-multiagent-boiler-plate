@@ -17,7 +17,14 @@
       "Bash(npm view:*)",
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial release v1.0.1 — Multi-agent delegation boilerplate for Claude Code\n\nCLI tool that generates Gemini + Codex + Claude multi-agent delegation\nconfig files for any Claude Code project via npx claude-agents-delegation init.\n\nFeatures:\n- Three-tier delegation \\(Claude/Codex/Gemini\\)\n- Parallel agent shorthands \\(x3, x5, c3, c5, g3, g5\\)\n- Automatic model fallback chains\n- Graceful degradation with Claude takeover\n- Interactive setup with language selection \\(EN/TR\\)\n- Zero dependencies\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(wsl:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)"
     ]
   }
 }

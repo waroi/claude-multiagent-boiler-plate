@@ -29,6 +29,11 @@ function writeFiles(files, targetDir) {
       continue;
     }
 
+    if (!content || typeof content !== 'string') {
+      console.error(`  Skipped: ${relPath} (invalid content)`);
+      continue;
+    }
+
     try {
       fs.writeFileSync(fullPath, content, 'utf8');
       console.log(`  Created: ${relPath}`);

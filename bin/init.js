@@ -11,11 +11,11 @@ async function main() {
 
   if (command !== 'init') {
     console.log('');
-    console.log('  Usage: npx claude-agents-delegation init [--yes]');
+    console.log('  Usage: npx claude-agents-delegation init [--yes|-y]');
     console.log('');
     console.log('  Options:');
-    console.log('    init       Generate delegation config files in current directory');
-    console.log('    --yes      Use defaults (both tools, full docs, English)');
+    console.log('    init         Generate delegation config files in current directory');
+    console.log('    --yes, -y    Use defaults (both tools, full docs, English)');
     console.log('');
     process.exit(0);
   }
