@@ -416,7 +416,7 @@ claude  # open Claude Code
 # "analyze this project c3"
 \`\`\`
 
-The \`init\` command will ask you which tools to use, documentation level, and language. Use \`--yes\` flag to skip prompts and use defaults.
+The \`init\` command will ask you which tools to use, documentation level, and language. Use \`--yes\` or \`-y\` flag to skip prompts and use defaults. In non-interactive environments (CI/CD), defaults are used automatically.
 
 ### Option B: Manual copy
 

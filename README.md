@@ -14,7 +14,7 @@ npx claude-agents-delegation init
 Or with defaults (no prompts):
 
 ```bash
-npx claude-agents-delegation init --yes
+npx claude-agents-delegation init -y
 ```
 
 ## What It Does
@@ -96,6 +96,7 @@ All commands use bash syntax. On Windows, use **Git Bash** or **WSL**.
 - **Graceful degradation** — If all external agents fail, Claude takes over automatically
 - **Zero dependencies** — Only uses Node.js built-ins
 - **Interactive setup** — Choose tools, docs, and language during init
+- **CI/CD friendly** — Auto-detects non-interactive environments, falls back to defaults
 - **Skip-existing** — Won't overwrite files that already exist in your project
 
 ## Usage Examples
@@ -117,10 +118,10 @@ what does this codebase do x3
 ## Options
 
 ```
-npx claude-agents-delegation init [--yes]
+npx claude-agents-delegation init [--yes|-y]
 
-  init       Generate delegation config files in current directory
-  --yes      Use defaults (both tools, full docs, English)
+  init         Generate delegation config files in current directory
+  --yes, -y    Use defaults (both tools, full docs, English)
 ```
 
 ## License

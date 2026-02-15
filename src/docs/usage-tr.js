@@ -416,7 +416,7 @@ claude  # Claude Code'u ac
 # "bu projeyi analiz et c3"
 \`\`\`
 
-\`init\` komutu sana hangi araclari kullanmak istedigini, dokumantasyon seviyesini ve dili sorar. Soru sormadan varsayilanlarla kurmak icin \`--yes\` flag'ini kullan.
+\`init\` komutu sana hangi araclari kullanmak istedigini, dokumantasyon seviyesini ve dili sorar. Soru sormadan varsayilanlarla kurmak icin \`--yes\` veya \`-y\` flag'ini kullan. Non-interactive ortamlarda (CI/CD) varsayilanlar otomatik kullanilir.
 
 ### Yontem B: Manuel Kopyalama
 
