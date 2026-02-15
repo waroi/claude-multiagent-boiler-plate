@@ -1,6 +1,6 @@
 {
   "name": "claude-agents-delegation",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Multi-agent delegation boilerplate for Claude Code — Gemini + Codex + Claude working together",
   "main": "src/generator.js",
   "bin": {
